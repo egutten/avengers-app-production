@@ -1,0 +1,137 @@
+<% include ../partials/header %>
+
+<div class="ui main text container">
+	<h1 class="ui centered header"><%- movie.title %></h1>
+	<div class="item">
+		<div class="image">
+		  <img class="ui centered rounded image movie-image" src="<%- movie.image %>">
+		</div>
+		<div class="movie-content">
+		  <div id="sub-show-picture">
+			<p id="submitted-by">
+				Submitted by: 
+				<a href="/users/<%= movie.author.id %>">
+					<%= movie.author.username %>
+				</a>
+			</p>
+			<% if(currentUser && movie.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
+			  <a href="/movies/<%= movie.slug %>/edit" class="ui green button">
+				  Edit
+			  </a>
+			  <button class="delete-movie ui red button" type="button">
+				  Delete
+			  </button>
+			<% } %>
+			 <a class="ui blue button" href="/movies/<%= movie.slug %>/quotes/new">
+				 Add New Quote
+			  </a>
+		  </div>
+		  <p class="show-title">
+			  <%= movie.title %> Synopsis
+		  </p>
+		  <p id="synposis">
+			  <%- movie.synopsis %>
+		  </p>
+		  <p class="show-title">
+			  Quotes
+		  </p>
+		  <ul>
+			<% if(movie.quotes.length < 1){ %>
+			<li>Be the first to add a quote!</li>
+			<% } %>
+			<% movie.quotes.forEach(function(quote){ %>
+			<li>
+				<div class="quote-info">
+					<div class="quote">
+						<i class="fas fa-star"></i>
+						"<%- quote.text %>" - <%- quote.character %>
+					</div>  
+					<% if(currentUser && quote.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
+						<a class="ui inverted green button"
+						   href="/movies/<%= movie.slug %>/quotes/<%= quote._id %>/edit">
+						   Edit
+						</a>
+						<button class="delete-quote ui inverted red button" type="button" quoteId="<%= quote._id %>" movieSlug="<%= movie.slug %>">
+							Delete
+						</button>
+					<% } %>
+					<form action="/movies/<%= movie.slug %>/quotes/<%= quote._id %>/like" method="POST">
+						<div class="like-button-group">
+							<% if (currentUser && quote.likes.some(function (like) { %>
+								<% return like.equals(currentUser._id) %>
+							<% })) { %>
+								<button class="ui inverted blue button">
+									<i class="thumbs up outline icon"></i>
+									(<%= quote.likes.length %>)
+								</button>
+							<% } else { %>
+								<button class="ui inverted blue button">
+									<i class="thumbs up outline icon"></i>
+									(<%= quote.likes.length %>)
+								</button>
+							<% } %>
+							<div class="pop-up-likes">
+								Liked By:
+								<ul>
+									<% quote.likes.forEach(function(like){ %>
+										<li>
+											<i class="smile outline icon"></i>
+											<a href="/users/<%= like._id %>">
+												<%= like.username %>
+											</a>
+									    </li>
+									<% }) %>
+									<% if (quote.likes.length === 0) { %>
+										<li>
+											<em>No likes yet.</em>
+									    </li>
+									<% } %>
+								</ul>
+							</div>
+						</div>
+					</form>
+				</div>
+				<p class="quote-user">
+					<em><%= quote.author.username %>, <%= moment(quote.createdAt).fromNow() %></em>
+				</p>
+			</li>
+			<% }) %>  
+		  </ul>
+		</div>
+	</div>
+</div>
+<div class="modal delete-movie-modal modal-content">
+	<p>
+		Do you really want to delete this movie!?
+	</p>
+	<div class="yes-no">
+		<form action="/movies/<%= movie.slug %>?_method=DELETE" method="POST">
+			<button class="ui inverted red button">
+				Yes
+			</button>
+		</form>
+		<button class="ok ui inverted green button">
+			No
+		</button>
+	</div>
+</div>
+<div class="modal delete-quote-modal modal-content">
+	<p>
+		Do you really want to delete this quote!?
+	</p>
+	<div class="yes-no">
+		<form action="" method="POST">	
+			<button class="ui inverted red button">
+				Yes
+			</button>
+		</form>
+		<button class="ok ui inverted green button">
+			No
+		</button>
+	</div>
+</div>
+<div class="modal-background">
+</div>
+
+
+<% include ../partials/footer %>

@@ -1,0 +1,327 @@
+ul{
+	padding: 0px;
+}
+
+li {
+	list-style: none;
+	font-size: 20px;
+}
+
+a {
+	color: #fc811c;
+}
+
+form {
+	margin-bottom: 0px;
+}
+
+li.select {
+	cursor: pointer;
+}
+
+li.select:hover {
+	color: #fc811c;
+}
+
+p, 
+li, 
+.ui.form .field>label,   
+.ui.card>.content>.header:not(.ui), 
+.ui.cards>.card>.content>.header:not(.ui), 
+.ui.form input[type=text], 
+.ui.form input[type=email],
+.ui.form input[type=password], 
+.ui.form textarea, 
+.ui.form input[type=text]::placeholder, 
+.ui.form input[type=text]:focus, 
+.ui.form input[type=email]::placeholder, 
+.ui.form input[type=email]:focus,
+.ui.form input[type=password]::placeholder, 
+.ui.form input[type=password]:focus, 
+.ui.form textarea::placeholder, 
+.ui.form textarea:focus, 
+.username-show,
+.alert-message,
+#forgot {
+	font-family: "Homenaje", sans-serif !important;
+}
+
+.ui.form input[type=text], 
+.ui.form textarea, 
+.ui.form input[type=email], 
+.ui.form input[type=password], 
+.ui.form input[type=password]::placeholder,
+.ui.form input[type=password]:focus,
+.ui.form input[type=text]::placeholder, 
+.ui.form input[type=text]:focus, 
+.ui.form input[type=email]::placeholder, 
+.ui.form input[type=email]:focus, 
+.ui.form textarea::placeholder, 
+.ui.form textarea:focus {
+	font-size: 18px;
+}
+
+.ui.form input[type=text]:focus, 
+.ui.form input[type=email]:focus, 
+.ui.form input[type=password]:focus, 
+.ui.form textarea:focus {
+	border: 1px solid #fc811c;
+}
+
+.ui.card, 
+.ui.card:first-child, 
+.ui.card:last-child {
+	margin: 10px;
+}
+
+.ui.menu, 
+h1.ui.header,  
+#signed-in-name {
+	font-family: "Bangers", sans-serif !important;
+}
+
+.ui.menu, 
+.ui.grid>.column:not(.row), 
+.movie-image, 
+#user-card {
+	box-shadow: 0px 5px 10px 0px rgba(0,0,0,.2);
+}
+
+h1.ui.header 
+.sub.header{
+	font-size: 20px;
+	margin-bottom: 30px;
+}
+
+.ui.inverted.blue.button, 
+.ui.inverted.blue.buttons .button {
+	padding: 9px 10px;;
+}
+
+.ui.form .field>label {
+	font-size: 20px;
+}
+
+.fa-star {
+	margin-right: 5px;
+	color: #c73a38;
+}
+
+.ui.menu {
+	background: #4f87db;
+	font-size: 20px;
+}
+
+.ui.grid {
+	margin: 0px 50px;
+}
+
+.ui.grid>.column:not(.row) {
+	padding: 0px;
+}
+
+h1.ui.header {
+	font-size: 60px;
+	margin-top: 10px;
+}
+
+.ui.card>.content>.header:not(.ui) {
+	font-size: 23px;
+	text-align: center;
+}
+
+.ui.card>.image>img {
+	height: 250px;
+	object-fit: cover;
+}
+
+.inline {
+	display: inline;
+}
+
+.search {
+	margin: 0px;
+}
+
+.modal-background {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    z-index: 5;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    /* margin: 15% auto; */
+    padding: 20px;
+    border: 5px solid #4f87db;
+    width: 60%; /* Could be more or less, depending on screen size */
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    margin-left: -30%;
+    display: none;
+    z-index: 10;
+	font-size: 20px;
+	text-align: center;
+}
+
+.see-quotes {
+	width: 115px;
+	margin: 10px auto 5px auto;
+}
+
+.movie-image {
+	height: 400px;
+	margin-bottom: 10px;
+}
+
+.show-title {
+	text-align: center;
+	font-size: 25px;
+	margin-bottom: 10px;
+}
+
+.user-show-column{
+	box-shadow: none !important;
+}
+
+.username-show {
+	font-size: 30px;
+}
+
+.content-user-card {
+	font-size: 20px;
+}
+
+.alert-message {
+	font-size: 25px !important;
+}
+
+.ui.text.container {
+	margin-top: 10px;
+}
+
+.ui.form input[type=checkbox] {
+	margin-left: 20px;
+}
+
+i.icon.thumbs.up.outline {
+	font-size: 20px;
+}
+
+.pop-up-likes {
+	position: absolute;
+	width: 150px;
+	border: 1px solid red;
+	background: white;
+	padding: 10px;
+	border-radius: 5%;
+	left: 70%;
+	z-index: 2;
+}
+
+.yes-no {
+	justify-content: center;
+}
+
+.quote {
+	width: 100px;
+}
+
+.quote-user {
+	font-size: 18px;
+	color: #b0aeac;
+}
+ 
+#sub-show-picture,
+#admin-checkbox,
+.quote-info,
+.yes-no,
+.search {
+	display: flex;
+	align-items: center;
+}
+
+#sub-show-picture {
+	margin-bottom: 20px;
+}
+
+#search {
+	height: 36px;
+	margin: 0px 10px;
+}
+
+#submitted-by {
+	font-size: 20px;
+	margin-bottom: 5px;
+}
+
+#signed-in-name {
+	color: #fc811c;
+}
+
+#synopsis, 
+.ui.text.container {
+	font-size: 18px;
+}
+
+#links:hover {
+	color: #fc811c;
+}
+
+#messages {
+	padding-top: 10px;
+	margin-top: 85px;
+	height: 30px;
+}
+
+#submitted-by,
+.quote {
+	flex-grow: 2;
+}
+
+#user-card {
+	margin: 7px auto;
+}
+
+#forgot {
+	font-size: 20px;
+	margin-top: 10px;
+}
+
+#edit-user-button {
+	width: 90px;
+	margin: 0px auto;
+}
+
+#edit-user-container {
+	margin: 30px 0px;
+}
+
+#footer-box {
+	width: 100%;
+	height: 50px;
+}
+
+@media (max-width: 767px) {
+ 	#messages {
+    	margin-top: 350px;
+  }
+	#signed-in-name {
+		display: none;
+	}
+}
+
+
+
+
+
+

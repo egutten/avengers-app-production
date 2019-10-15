@@ -1,0 +1,26 @@
+<% include ../partials/header %>
+
+<div class="ui main text container">
+	<h1 class="ui centered header">Add New Avengers Movie</h1>
+	<form class="ui form" action="/movies" method="POST">
+	  <div class="field">
+		<label for="title">Avengers Movie Name</label>
+		<input id="title" type="text" name="movie[title]" placeholder="Movie Title" required>
+		<ul id="results">
+		</ul>
+	  </div>
+	  <div class="field">
+		<label for="image">Movie Image</label>
+		<input id="image" type="text" name="movie[image]" placeholder="Image">
+	  </div>
+	  <div class="field">
+		<label for="synopsis">Synopsis</label>
+		<textarea id="synopsis" name="movie[synopsis]"></textarea>
+	  </div>
+	  <button class="ui inverted orange button" type="submit">
+		  Submit
+	  </button>
+	</form>
+</div>
+
+<% include ../partials/footer %>

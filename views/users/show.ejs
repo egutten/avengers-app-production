@@ -1,0 +1,61 @@
+<% include ../partials/header %>
+
+<div id="edit-user-container" class="ui container">
+	<div class="ui grid">
+		<div class="user-show-column eight wide column">
+			<div id="user-card" class="ui card">
+				<div class="image">
+					<% if(user.avatar) { %>
+						<img src="<%= user.avatar %>">
+					<% } else { %>
+						<img src="https://webkit.org/blog-files/color-gamut/Webkit-logo-P3.png">
+					<% } %>
+				</div>
+				<div class="content">
+					<h1 class="username-show">
+						<%= user.username %>
+					</h1>
+					<% if(user.lastName) { %>
+						<p class="content-user-card">
+							Name: <%= user.firstName + " " + user.lastName %>
+					    </p>
+					<% } else { %>
+						<p class="content-user-card">
+							Name: <%= user.firstName + " " + "???" %>
+					    </p>
+					<% } %>
+					<p class="content-user-card">
+						Email:
+						<a class="content-user-card" href="mailto: <%= user.email %>">
+							<%= user.email %>
+						</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="user-show-column eight wide column">
+			<h3 class="username-show">
+				<%= user.username %>'s movies:
+			</h3>
+			<ul>
+			<% movies.forEach(function(movie){ %>
+				<li>
+					<a href="/movies/<%= movie.slug %>">
+						<%= movie.title %>
+					</a>
+				</li>
+			<% }); %>
+			</ul>
+		</div>
+
+	</div>
+</div>
+<% if(currentUser && user._id.equals(currentUser._id)) { %>
+		<div id="edit-user-button">
+			<a class="ui green button" href="/users/<%= currentUser._id %>/edit">
+				Edit
+			</a>
+		</div>	
+<% } %>
+
+<% include ../partials/footer %>

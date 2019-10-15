@@ -1,0 +1,67 @@
+<html>
+	<head>
+		<title>Avengers App</title>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+		<link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+		<link href="https://fonts.googleapis.com/css?family=Homenaje|Bangers&display=swap" rel="stylesheet">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" rel="stylesheet">
+	</head>
+	<body>		
+		<div id="menu-bar" class="ui top fixed stackable menu">
+		  <div class="item">
+			<img src="http://pluspng.com/img-png/avengers-logo-png-avengers-logo-png-1376.png">
+		  </div>
+		  <a href="/" class="item">
+			  Home
+		  </a>
+		  <a href="/movies/new" class="item">
+			  Add New Avengers Movie
+		  </a>
+		  <form class="ui form search" action="/movies" method="GET">
+			  <div class="search field">
+				  <input id="search" type="text" name="search" placeholder="Movie search...">
+				  <button class="ui orange button" type="submit">
+					  Submit
+				  </button>
+			  </div>
+		  </form>
+		  <div class="right menu">
+			  <% if(!currentUser){ %>
+				<a href="/login" class="item">
+					Log In
+			    </a>
+		  		<a href="/register" class="item">
+					Sign Up
+			    </a>
+				<% } else { %>
+					<a href="/logout" class="item">
+						Log Out
+			        </a>
+			  		<a class="item" href="/users/<%= currentUser._id %>">
+						My Profile
+			        </a>
+					<p id="signed-in-name" class="item">
+						Signed in as <%= currentUser.username %>
+			        </p>
+				<% } %>
+		  </div>
+		</div>
+		
+		<div id="messages"> 
+			<% if(error && error.length > 0) { %>
+			<h4 class="ui red header centered alert-message" role="alert">
+				<%= error %>
+			</h4>
+			<% } %>
+			<% if(success && success.length > 0) { %>
+			<h4 class="ui green header centered alert-message" role="alert">
+				<%= success %>
+			</h4>
+			<% } %>
+		</div>
+		
+	
+			
+		
+	
+		

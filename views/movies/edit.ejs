@@ -1,0 +1,26 @@
+<% include ../partials/header %>
+
+<div class="ui main text container">
+	<h1 class="ui centered header">
+		Edit <%= movie.title %> Entry
+	</h1>
+	<form class="ui form" action="/movies/<%= movie.slug %>?_method=PUT" method="POST">
+	  <div class="field">
+		<label for="title">Avengers Movie Name</label>
+		<input id="title" type="text" name="movie[title]" value="<%= movie.title %>">
+	  </div>
+	  <div class="field">
+		<label for="image">Movie Image</label>
+		<input id="image" type="text" name="movie[image]" value="<%= movie.image %>">
+	  </div>
+	  <div class="field">
+		<label for="synopsis">Synopsis</label>
+		<textarea id="synopsis" name="movie[synopsis]"><%= movie.synopsis %></textarea>
+	  </div>
+	  <button class="ui inverted orange button" type="submit">
+		  Save
+	  </button>
+	</form>
+</div>
+
+<% include ../partials/footer %>

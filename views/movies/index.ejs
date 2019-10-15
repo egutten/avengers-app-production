@@ -1,0 +1,30 @@
+<% include ../partials/header %>
+
+<h1 class="ui centered header">
+  Favorite Avengers Quotes By Movie
+  <div class="sub header">
+	  Read everyone's favorites and add your own!
+  </div>
+</h1>
+
+<div class="ui centered stackable grid">
+	  <% movies.forEach(function(movie){ %>
+	  <div class="ui card three wide column">
+		<div class="image">
+		  <img src="<%- movie.image %>">
+		</div>
+		<div class="content">
+		  <a id="links" class="header" href="/movies/<%= movie.slug %>">
+			  <%= movie.title %>
+		  </a>
+		  <div class="extra see-quotes">
+			<a class="small ui inverted orange button" href="/movies/<%= movie.slug %>">
+				See Quotes!
+			</a>
+		  </div>
+		</div>
+	  </div>
+	<% }) %>
+</div>
+	
+<% include ../partials/footer %>

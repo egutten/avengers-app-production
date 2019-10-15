@@ -1,0 +1,20 @@
+<% include ../partials/header %>
+
+<div class="ui main text container">
+	<h1 class="ui centered header">
+		Add New Quote for <%= movie.title %>
+	</h1>
+	<form class="ui form" action="/movies/<%= movie.slug %>/quotes" method="POST">
+	  <div class="field">
+		<label for="text">Favorite Quote</label>
+		<textarea id="text" name="quote[text]"></textarea>
+		<label for="character">Who Said It?</label>
+		<input id="character" type="text" name="quote[character]" placeholder="Character">
+	  </div>
+	  <button class="ui inverted orange button" type="submit">
+		  Submit
+	  </button>
+	</form>
+</div>
+
+<% include ../partials/footer %>

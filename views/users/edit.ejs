@@ -1,0 +1,70 @@
+<% include ../partials/header %>
+
+<div class="ui main text container">
+	<h1 class="ui centered header">
+		Edit <%= user.username %>'s Profile
+	</h1>
+	<form class="ui form" action="/users/<%= user._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+	  <div class="field">
+		<label for="first-name">First Name</label>
+		<input id="first-name" type="text" name="firstName" value="<%= user.firstName %>">
+	  </div>
+	  <div class="field">	
+		<label for="last-name">Last Name</label>
+		<input id="last-name" type="text" name="lastName" value="<%= user.lastName %>">
+	  </div>
+	  <div class="field">
+		<label for="avatar">Avatar</label>
+		<input id="avatar" type="file" name="avatar" accept="image/*">
+	  </div>
+	  <div class="field">  
+		<label for="email">Email</label>
+		<input id="email" type="email" name="email" value="<%= user.email %>">
+	  </div>
+	  <div class="field">
+		<% if (user.isAdmin === false) { %>
+			<label for="admin-code">Admin Code</label>
+			<input id="admin-code" type="text" name="adminCode" placeholder="admin code">
+		<% } %>
+	  </div>
+	  <div id="admin-checkbox" class="field">
+		<% if (user.isAdmin === true) { %>
+		  <label for="revoke-admin">Revoke admin</label>
+		  <input id="revoke-admin" type="checkbox" name="revokeAdmin">
+		<% } %>
+	  </div>  
+	  <button class="ui inverted orange button" type="submit">
+		  Submit
+	  </button>
+	  <button class="delete-profile ui inverted red button" type="button">
+		Delete Profile
+	  </button>
+	</form>
+</div>
+<div class="modal admin-modal modal-content">
+	<p>
+		Checking the revoke checkbox will get rid of your admin privileges. Make sure you want to do that!
+	</p>
+	<button class="ok ui inverted green button">
+		OK
+	</button>
+</div>
+<div class="modal delete-profile-modal modal-content">
+	<p>
+		Do you really want to delete your profile!?
+	</p>
+	<div class="yes-no">
+		<form action="/users/<%= user._id %>?_method=DELETE" method="POST">
+			<button class="ui inverted red button">
+				Yes
+			</button>
+		</form>
+		<button class="ok ui inverted green button">
+			No
+		</button>
+	</div>
+</div>
+<div class="modal-background">
+</div>
+
+<% include ../partials/footer %>

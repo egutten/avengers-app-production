@@ -1,0 +1,18 @@
+<% include ../partials/header %>
+
+<div class="ui main text container">
+	<h1 class="ui centered header">
+		Forgot Password
+	</h1>
+	<form class="ui form" action="/forgot" method="POST">
+		<div class="field">
+			<label for="email">Email</label>
+			<input id="email" type="email" name="email" placeholder="email">
+		</div>
+		<button class="ui large inverted orange button">
+			Submit
+		</button>
+	</form>
+</div>
+
+<% include ../partials/footer %>
