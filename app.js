@@ -16,7 +16,7 @@ var quoteRoutes      = require("./routes/quotes"),
 	movieRoutes      = require("./routes/movies"),
 	indexRoutes      = require("./routes/index");
 
-mongoose.connect("mongodb://localhost:27017/avengers_app", {useNewUrlParser: true});
+mongoose.connect("mongodb://heroku_4w2fzchw:ap3ncs80u5lj7sfmnlfohjlh67@ds159184.mlab.com:59184/heroku_4w2fzchw", {useNewUrlParser: true});
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 app.use(bodyParser.urlencoded({extended: true}));
