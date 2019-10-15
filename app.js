@@ -55,6 +55,6 @@ app.use("/", indexRoutes);
 app.use("/movies/:slug/quotes", quoteRoutes);
 app.use("/movies", movieRoutes);
 
-app.listen(59184, process.env.IP, function(){
+app.listen(process.env.PORT, process.env.IP, function(){
 	console.log("server has started!");
 });
