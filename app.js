@@ -11,12 +11,14 @@ var express          = require("express"),
 	Quote            = require("./models/quote"),
 	app              = express();
 
+require('dotenv').config();
+
 // Requiring routes
 var quoteRoutes      = require("./routes/quotes"),
 	movieRoutes      = require("./routes/movies"),
 	indexRoutes      = require("./routes/index");
 
-mongoose.connect("mongodb://heroku_4w2fzchw:ap3ncs80u5lj7sfmnlfohjlh67@ds159184.mlab.com:59184/heroku_4w2fzchw", {useNewUrlParser: true});
+mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true});
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 app.use(bodyParser.urlencoded({extended: true}));
@@ -51,6 +53,6 @@ app.use("/", indexRoutes);
 app.use("/movies/:slug/quotes", quoteRoutes);
 app.use("/movies", movieRoutes);
 
-app.listen(4000, process.env.IP, function(){
+app.listen(59184, process.env.IP, function(){
 	console.log("server has started!");
 });
