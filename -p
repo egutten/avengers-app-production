@@ -1,0 +1,7 @@
+MongoDB shell version v4.0.3
+connecting to: mongodb://ds159184.mlab.com:59184/heroku_4w2fzchw
+Implicit session: session { "id" : UUID("81ba687c-2b3c-4094-b36a-32d7fb864b7a") }
+MongoDB server version: 3.6.12
+WARNING: shell and server versions do not match
+2019-10-15T11:26:59.430-0700 E -        [main] file [ap3ncs80u5lj7sfmnlfohjlh67] doesn't exist
+failed to load: ap3ncs80u5lj7sfmnlfohjlh67
