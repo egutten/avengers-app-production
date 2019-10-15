@@ -13,8 +13,6 @@ var express          = require("express"),
 
 require('dotenv').config();
 
-console.log("THIS IS A NEW VERSION");
-
 // Requiring routes
 var quoteRoutes      = require("./routes/quotes"),
 	movieRoutes      = require("./routes/movies"),
